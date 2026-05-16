@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Papino Village — глэмпинг в Калужской области, 65 км от Москвы</title>
+<meta name="description" content="Papino Village — два А-фрейм домика в лесу у речки, 65 км от МКАД по Калужскому шоссе. Тёплая купель, баня, костровая зона. Честно о том, что вас ждёт.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f5ede0'/%3E%3Cpath d='M16 5l9 16H7z' fill='%237a5c3a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Mulish:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5ede0; --bg-soft:#faf5ee; --accent:#7a5c3a; --ink:#2c1f0e;
+  --line:#e8d5bc; --maxw:1100px;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Mulish',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);
+  font-weight:400;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.18}
+h1{font-size:clamp(2.1rem,6vw,4rem);font-weight:700}
+h2{font-size:clamp(1.7rem,4vw,2.6rem);margin-bottom:.5em}
+h3{font-size:clamp(1.25rem,2.6vw,1.7rem)}
+p{margin-bottom:1rem}
+a{color:inherit}
+img{max-width:100%;display:block}
+.label{display:inline-block;font-family:var(--sans);font-weight:600;
+  font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:1rem}
+section{padding:clamp(3rem,8vw,6rem) 1.25rem}
+.wrap{max-width:var(--maxw);margin:0 auto}
+.section-soft{background:var(--bg-soft)}
+.divider{height:1px;background:var(--line);max-width:var(--maxw);margin:0 auto}
+.btn{display:inline-block;background:var(--accent);color:var(--bg);
+  font-family:var(--sans);font-weight:700;font-size:.95rem;
+  padding:.9rem 1.9rem;border:0;border-radius:2px;text-decoration:none;
+  cursor:pointer;letter-spacing:.02em;
+  transition:transform .15s ease,opacity .15s ease}
+.btn:hover{transform:translateY(-2px);opacity:.92}
+.btn-ghost{background:transparent;color:var(--accent);
+  border:1px solid var(--accent)}
+.ph{background:#efe2cf;border:1px dashed var(--accent);color:var(--accent);
+  font-size:.8rem;padding:.15rem .5rem;border-radius:2px;display:inline-block}
+
+/* ---- NAV ---- */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 1.25rem;transition:background .25s ease,box-shadow .25s ease}
+nav.nav-solid{background:var(--bg);box-shadow:0 1px 0 var(--line)}
+.brand{font-family:var(--serif);font-weight:700;font-size:1.2rem;
+  color:#fff;text-decoration:none;transition:color .25s ease}
+nav.nav-solid .brand{color:var(--ink)}
+.nav-links{display:flex;gap:1.6rem;align-items:center;list-style:none}
+.nav-links a{color:#fff;text-decoration:none;font-size:.92rem;
+  font-weight:600;transition:color .25s ease}
+nav.nav-solid .nav-links a{color:var(--ink)}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{padding:.55rem 1.2rem}
+.nav-toggle{display:none;background:none;border:0;cursor:pointer;
+  width:28px;height:22px;position:relative}
+.nav-toggle span{position:absolute;left:0;width:100%;height:2px;
+  background:#fff;transition:background .25s ease}
+nav.nav-solid .nav-toggle span{background:var(--ink)}
+.nav-toggle span:nth-child(1){top:0}
+.nav-toggle span:nth-child(2){top:10px}
+.nav-toggle span:nth-child(3){top:20px}
+
+/* ---- HERO ---- */
+#hero{position:relative;min-height:100vh;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;text-align:center;
+  color:#fff;padding:6rem 1.5rem 4rem}
+#hero::before{content:"";position:absolute;inset:0;z-index:-2;
+  background-image:var(--hero-img,url(images/hero/summer.jpg));
+  background-size:cover;background-position:center}
+#hero::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(44,31,14,.45),rgba(44,31,14,.35) 50%,rgba(44,31,14,.6))}
+.hero-sub{font-family:var(--serif);font-style:italic;
+  font-size:clamp(1.1rem,3vw,1.7rem);margin:1.2rem 0 2.2rem;
+  max-width:30ch;opacity:.95}
+.hero-meta{margin-top:2.5rem;font-size:.8rem;letter-spacing:.18em;
+  text-transform:uppercase;opacity:.85}
+
+/* ---- GENERIC SECTION ---- */
+.lede{max-width:60ch;font-size:1.08rem}
+.two-col{display:grid;gap:2.5rem}
+@media(min-width:820px){.two-col{grid-template-columns:1fr 1fr}}
+
+/* ---- HOUSES ---- */
+.house{display:grid;gap:1.8rem;margin-top:2.5rem}
+@media(min-width:900px){.house{grid-template-columns:1.1fr 1fr;align-items:start;gap:3rem}
+  .house.rev .slider{order:2}}
+.slider{position:relative;border:1px solid var(--line);background:var(--bg-soft)}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
+  scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.track img{flex:0 0 100%;scroll-snap-align:start;
+  aspect-ratio:3/2;object-fit:cover}
+.slider button{position:absolute;top:50%;transform:translateY(-50%);
+  width:42px;height:42px;border:0;border-radius:50%;cursor:pointer;
+  background:rgba(245,237,224,.9);color:var(--ink);font-size:1.1rem}
+.slider .prev{left:.6rem}.slider .next{right:.6rem}
+.house h3{margin-bottom:.2rem}
+.price{font-family:var(--serif);font-size:1.25rem;margin:.6rem 0 1.2rem}
+.incl{list-style:none;display:grid;gap:.45rem;margin:1rem 0 1.4rem}
+.incl li{padding-left:1.4rem;position:relative;font-size:.97rem}
+.incl li::before{content:"—";position:absolute;left:0;color:var(--accent)}
+.feat{background:var(--bg-soft);border-left:3px solid var(--accent);
+  padding:.9rem 1.1rem;margin:1.2rem 0;font-size:.97rem}
+.fine{font-size:.86rem;color:#6b5a42;margin:.8rem 0 1.4rem}
+
+/* ---- SERVICES / AMENITIES ---- */
+.cards{display:grid;gap:1.5rem;margin-top:2.5rem}
+@media(min-width:720px){.cards{grid-template-columns:1fr 1fr}}
+.card{border:1px solid var(--line);background:var(--bg-soft);
+  padding:1.8rem}
+.amen{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;
+  margin-top:2.5rem;text-align:center}
+@media(min-width:560px){.amen{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:860px){.amen{grid-template-columns:repeat(5,1fr)}}
+.amen div{display:flex;flex-direction:column;align-items:center;gap:.6rem;
+  font-size:.9rem}
+.amen svg{width:34px;height:34px;stroke:var(--accent);fill:none;
+  stroke-width:1.5}
+
+/* ---- MAP ---- */
+.map{margin-top:2rem;border:1px solid var(--line)}
+.map iframe{display:block;width:100%;height:380px;border:0}
+
+/* ---- REVIEWS ---- */
+.reviews{display:grid;gap:1.5rem;margin-top:2.5rem}
+@media(min-width:720px){.reviews{grid-template-columns:1fr 1fr}}
+.review{border:1px solid var(--line);padding:1.6rem;background:var(--bg-soft)}
+.review p{font-family:var(--serif);font-style:italic;font-size:1.05rem}
+.review .who{font-style:normal;font-family:var(--sans);font-size:.85rem;
+  color:#6b5a42;margin:0}
+
+/* ---- FAQ ---- */
+.faq{max-width:760px;margin:2.5rem auto 0}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;text-align:left;background:none;border:0;cursor:pointer;
+  font-family:var(--sans);font-weight:600;font-size:1.02rem;color:var(--ink);
+  padding:1.2rem 2.2rem 1.2rem 0;position:relative}
+.faq-q::after{content:"+";position:absolute;right:.4rem;top:1.1rem;
+  font-size:1.3rem;color:var(--accent);transition:transform .2s ease}
+.faq-q[aria-expanded="true"]::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .28s ease}
+.faq-a p{padding:0 0 1.3rem;color:#4a3a22;margin:0}
+
+/* ---- BOOKING ---- */
+#booking{text-align:center}
+.widget-box{max-width:760px;margin:2rem auto;min-height:240px;
+  border:1px dashed var(--accent);background:var(--bg-soft);
+  display:flex;align-items:center;justify-content:center;
+  padding:2rem;color:var(--accent);font-size:.95rem}
+.contact-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;
+  margin-top:1.5rem}
+
+/* ---- CONTACTS / FOOTER ---- */
+#contacts{text-align:center}
+.contact-grid{display:grid;gap:1.4rem;margin-top:2rem;
+  grid-template-columns:1fr}
+@media(min-width:680px){.contact-grid{grid-template-columns:repeat(3,1fr)}}
+.socials{display:flex;gap:1.2rem;justify-content:center;margin-top:1.8rem}
+.socials a{font-weight:600;text-decoration:none;color:var(--accent)}
+footer{background:var(--ink);color:#d8c9b0;text-align:center;
+  padding:2.5rem 1.25rem;font-size:.85rem}
+footer a{color:#d8c9b0}
+
+@media(max-width:780px){
+  .nav-toggle{display:block}
+  .nav-links{position:fixed;inset:0 0 0 auto;width:75%;max-width:300px;
+    background:var(--bg);flex-direction:column;align-items:flex-start;
+    gap:1.6rem;padding:5rem 2rem;transform:translateX(100%);
+    transition:transform .3s ease;box-shadow:-4px 0 24px rgba(44,31,14,.15)}
+  .nav-links.open{transform:translateX(0)}
+  .nav-links a{color:var(--ink)}
+  .nav-cta{margin-top:.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#hero" class="brand">Papino&nbsp;Village</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Меню" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">О месте</a></li>
+    <li><a href="#houses">Домики</a></li>
+    <li><a href="#services">Услуги</a></li>
+    <li><a href="#reviews">Отзывы</a></li>
+    <li><a href="#faq">Вопросы</a></li>
+    <li><a href="#contacts">Контакты</a></li>
+    <li><a href="#booking" class="btn nav-cta">Забронировать</a></li>
+  </ul>
+</nav>
+
+<header id="hero">
+  <h1>Лес, речка и тёплая купель<br>в 65&nbsp;км от Москвы</h1>
+  <p class="hero-sub" id="heroSub">Речка, костёр, звёздное небо.</p>
+  <a href="#booking" class="btn">Проверить свободные даты</a>
+  <div class="hero-meta">Калужское шоссе · рядом с д. Папино</div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <span class="label">О месте</span>
+    <h2>Два домика, лес и небольшая речка</h2>
+    <div class="lede">
+      <p>Papino Village — это два А-фрейм домика в лесу в Калужской области,
+      65&nbsp;км от МКАД по Калужскому шоссе. Не «вековая тайга» и не «дикая
+      природа» — обычный спокойный лес, речка рядом и тишина, которой не
+      хватает в городе.</p>
+      <p>Сюда приезжают вдвоём или небольшой компанией: протопить купель,
+      посидеть у костра, выспаться без будильника. Мы честно описываем, что
+      вас ждёт — чтобы ожидания совпали с реальностью.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="houses">
+  <div class="wrap">
+    <span class="label">Домики</span>
+    <h2>Синий и Зелёный</h2>
+
+    <div class="house">
+      <div class="slider" data-slider>
+        <div class="track">
+          <img src="images/blue-house/1.jpg" alt="Синий домик, фото 1" loading="lazy">
+          <img src="images/blue-house/2.jpg" alt="Синий домик, фото 2" loading="lazy">
+          <img src="images/blue-house/3.jpg" alt="Синий домик, фото 3" loading="lazy">
+        </div>
+        <button class="prev" aria-label="Назад">‹</button>
+        <button class="next" aria-label="Вперёд">›</button>
+      </div>
+      <div>
+        <h3>Синий домик</h3>
+        <p class="price">от <span class="ph">____</span> ₽ будни ·
+          <span class="ph">____</span> ₽ выходные</p>
+        <p><strong>Что внутри:</strong></p>
+        <ul class="incl">
+          <li>Двуспальная кровать и диван</li>
+          <li>Кухня: плитка, чайник, холодильник, посуда, шампуры</li>
+          <li>Санузел с горячей водой</li>
+          <li>Отопление</li>
+          <li>Wi-Fi</li>
+        </ul>
+        <div class="feat">Особенность: купель фурако на дровах прямо у домика.</div>
+        <p class="fine">Заезд с <span class="ph">__:__</span>, выезд до
+          <span class="ph">__:__</span>. Питомцы и дополнительные гости —
+          <span class="ph">условия уточняются</span>.</p>
+        <a href="#booking" class="btn">Забронировать этот домик</a>
+      </div>
+    </div>
+
+    <div class="house rev" style="margin-top:3.5rem">
+      <div class="slider" data-slider>
+        <div class="track">
+          <img src="images/green-house/1.jpg" alt="Зелёный домик, фото 1" loading="lazy">
+          <img src="images/green-house/2.jpg" alt="Зелёный домик, фото 2" loading="lazy">
+          <img src="images/green-house/3.jpg" alt="Зелёный домик, фото 3" loading="lazy">
+        </div>
+        <button class="prev" aria-label="Назад">‹</button>
+        <button class="next" aria-label="Вперёд">›</button>
+      </div>
+      <div>
+        <h3>Зелёный домик</h3>
+        <p class="price">от <span class="ph">____</span> ₽ будни ·
+          <span class="ph">____</span> ₽ выходные</p>
+        <p><strong>Что внутри:</strong></p>
+        <ul class="incl">
+          <li>Двуспальная кровать и диван</li>
+          <li>Кухня: плитка, чайник, холодильник, посуда, шампуры</li>
+          <li>Санузел с горячей водой</li>
+          <li>Отопление</li>
+          <li>Wi-Fi</li>
+        </ul>
+        <div class="feat">Особенность: камин-печь внутри и чан-купель на дровах.</div>
+        <p class="fine">Заезд с <span class="ph">__:__</span>, выезд до
+          <span class="ph">__:__</span>. Питомцы и дополнительные гости —
+          <span class="ph">условия уточняются</span>.</p>
+        <a href="#booking" class="btn">Забронировать этот домик</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section-soft">
+  <div class="wrap">
+    <span class="label">Дополнительно</span>
+    <h2>Купель, чан и баня</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Купель / Чан</h3>
+        <p>Дровяная купель фурако (Синий) и чан-купель (Зелёный). Топится
+        заранее к вашему приезду.</p>
+        <p>Цена и длительность сеанса: <span class="ph">уточняется — см. CONTENT.md</span></p>
+      </div>
+      <div class="card">
+        <h3>Баня</h3>
+        <p>Отдельная баня на дровах. Запись заранее, количество мест
+        ограничено.</p>
+        <p>Цена: <span class="ph">уточняется</span>. Запись по телефону:
+          <a class="phone" href="#"><span class="ph">+7 (___) ___-__-__</span></a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="amenities">
+  <div class="wrap">
+    <span class="label">Что есть на территории</span>
+    <h2>Удобства</h2>
+    <div class="amen">
+      <div><svg viewBox="0 0 24 24"><path d="M4 20h16M7 20V8m10 12V8M5 8h14l-2-4H7z"/></svg>Мангальная зона</div>
+      <div><svg viewBox="0 0 24 24"><path d="M12 3c2 3-1 4 0 7 3-1 4 3 4 6a6 6 0 11-12 0c0-4 4-5 4-9 2 1 2 3 4-4z"/></svg>Костровая зона</div>
+      <div><svg viewBox="0 0 24 24"><path d="M2 9a15 15 0 0120 0M5 13a9 9 0 0114 0M9 17a3 3 0 016 0"/><circle cx="12" cy="20" r="1"/></svg>Wi-Fi</div>
+      <div><svg viewBox="0 0 24 24"><path d="M5 17v-6l7-4 7 4v6M3 21h18M9 21v-5h6v5"/></svg>Парковка</div>
+      <div><svg viewBox="0 0 24 24"><path d="M4 21V10l8-6 8 6v11M9 21v-7h6v7"/></svg>Баня</div>
+      <div><svg viewBox="0 0 24 24"><path d="M4 16h16v3H4zM6 16c0-4 2-7 6-7s6 3 6 7M9 9V5m6 4V5"/></svg>Купель</div>
+      <div><svg viewBox="0 0 24 24"><path d="M12 22V9M12 9l-4-4M12 9l4-4M12 14l-5-3M12 14l5-3"/></svg>Лес</div>
+      <div><svg viewBox="0 0 24 24"><path d="M3 14c3-2 5 2 9 0s6 2 9 0M3 18c3-2 5 2 9 0s6 2 9 0M3 10c3-2 5 2 9 0s6 2 9 0"/></svg>Речка</div>
+      <div><svg viewBox="0 0 24 24"><path d="M8 3v8M16 3v8M6 11h12l-2 10H8zM3 21h18"/></svg>Водопад Радужный</div>
+    </div>
+    <p class="fine" style="text-align:center;margin-top:2rem">
+      До водопада Радужный — около 15 минут пешком.</p>
+  </div>
+</section>
+
+<section id="location" class="section-soft">
+  <div class="wrap">
+    <span class="label">Как добраться</span>
+    <h2>65 км от МКАД, Калужское шоссе</h2>
+    <p class="lede">Едете по Калужскому шоссе, ориентир — деревня Папино,
+    Калужская область. Точную точку и навигацию пришлём в подтверждении
+    брони.</p>
+    <p class="fine"><span class="ph">Точные координаты карты задаются в CONTENT.md</span></p>
+    <div class="map">
+      <iframe loading="lazy" title="Карта — район Папино"
+        src="https://yandex.ru/map-widget/v1/?ll=36.60%2C55.20&z=10"></iframe>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <span class="label">Отзывы гостей</span>
+    <h2>Что говорят гости</h2>
+    <div class="reviews" id="reviewsGrid"></div>
+    <p class="fine" style="text-align:center;margin-top:2rem">
+      <span class="ph">Тексты отзывов — заменяются реальными, см. CONTENT.md</span></p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="faq">
+  <div class="wrap">
+    <span class="label">Частые вопросы</span>
+    <h2>Вопросы и ответы</h2>
+    <div class="faq" id="faqList"></div>
+  </div>
+</section>
+
+<section id="booking" class="section-soft">
+  <div class="wrap">
+    <span class="label">Бронирование</span>
+    <h2>Приезжайте — мы протопим купель к вашему приезду</h2>
+    <p class="lede" style="margin:0 auto">Выберите свободные даты в виджете
+    ниже. Бронь и оплата проходят через сервис bronirui-online.ru.</p>
+    <div class="widget-box" id="bookingWidget">
+      Сюда вставляется виджет бронирования bronirui-online.ru —
+      инструкция в CONTENT.md
+    </div>
+    <p>Остались вопросы? Напишите напрямую:</p>
+    <div class="contact-btns">
+      <a href="#" class="btn" id="waBtn">WhatsApp</a>
+      <a href="#" class="btn btn-ghost" id="tgBtn">Telegram</a>
+    </div>
+    <p class="fine" style="margin-top:1rem">
+      <span class="ph">Номер WhatsApp и ник Telegram — в CONTENT.md</span></p>
+  </div>
+</section>
+
+<section id="contacts">
+  <div class="wrap">
+    <span class="label">Контакты</span>
+    <h2>Papino Village</h2>
+    <div class="contact-grid">
+      <div><strong>Телефон</strong><br>
+        <a class="phone" href="#"><span class="ph">+7 (___) ___-__-__</span></a></div>
+      <div><strong>Email</strong><br>
+        <span class="ph">______@______</span></div>
+      <div><strong>Адрес</strong><br>
+        Калужская область,<br>рядом с д. Папино</div>
+    </div>
+    <div class="socials">
+      <a href="https://vk.com/papino_village" target="_blank" rel="noopener">ВКонтакте</a>
+      <a href="#" id="waBtn2">WhatsApp</a>
+      <a href="#" id="tgBtn2">Telegram</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© <span id="year"></span> Papino Village · Калужская область, д. Папино</p>
+  <p style="margin:0;opacity:.7">
+    <a href="https://vk.com/papino_village" target="_blank" rel="noopener">ВКонтакте</a></p>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---- mobile nav ---- */
+  var toggle=document.getElementById('navToggle'),
+      links=document.getElementById('navLinks'),
+      nav=document.getElementById('nav');
+  toggle.addEventListener('click',function(){
+    var open=links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded',open?'true':'false');
+  });
+  links.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){links.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');}
+  });
+  window.addEventListener('scroll',function(){
+    nav.classList.toggle('nav-solid',window.scrollY>40);
+  },{passive:true});
+
+  /* ---- seasonal hero (spec §7) ---- */
+  var SEASON=[
+    {months:[11,0,1],sub:"Горячая купель в снегу. Камин. Тишина.",img:"winter"},
+    {months:[2,3,4], sub:"Лес просыпается. Первые рассветы на террасе.",img:"spring"},
+    {months:[5,6,7], sub:"Речка, костёр, звёздное небо.",img:"summer"},
+    {months:[8,9,10],sub:"Золото леса. Баня. Горячий чай.",img:"autumn"}
+  ];
+  var m=new Date().getMonth();
+  var s=SEASON.find(function(x){return x.months.indexOf(m)>-1;})||SEASON[2];
+  document.getElementById('heroSub').textContent=s.sub;
+  var hero=document.getElementById('hero');
+  function applyHero(name){
+    hero.style.setProperty('--hero-img','url(images/hero/'+name+'.jpg)');
+  }
+  var probe=new Image();
+  probe.onload=function(){applyHero(s.img);};
+  probe.onerror=function(){applyHero('summer');};   /* spec §7 fallback */
+  probe.src='images/hero/'+s.img+'.jpg';
+
+  /* ---- sliders ---- */
+  document.querySelectorAll('[data-slider]').forEach(function(sl){
+    var track=sl.querySelector('.track');
+    sl.querySelector('.prev').addEventListener('click',function(){
+      track.scrollBy({left:-track.clientWidth,behavior:'smooth'});});
+    sl.querySelector('.next').addEventListener('click',function(){
+      track.scrollBy({left:track.clientWidth,behavior:'smooth'});});
+  });
+
+  /* ---- reviews (placeholders — replace via CONTENT.md) ---- */
+  var reviews=[];
+  for(var i=1;i<=6;i++){
+    reviews.push({text:"[ПЛЕЙСХОЛДЕР — заменить реальным текстом отзыва "+i+
+      ". См. CONTENT.md]",who:"Имя гостя · дата"});
+  }
+  var rg=document.getElementById('reviewsGrid');
+  reviews.forEach(function(r){
+    var d=document.createElement('div');d.className='review';
+    var p=document.createElement('p');p.textContent='«'+r.text+'»';
+    var w=document.createElement('p');w.className='who';w.textContent=r.who;
+    d.appendChild(p);d.appendChild(w);rg.appendChild(d);
+  });
+
+  /* ---- FAQ (spec §4.8) ---- */
+  var FAQ=[
+    {q:"Что есть в домике?",
+     a:"Двуспальная кровать и диван, кухня (плитка, чайник, холодильник, "+
+       "посуда, шампуры), санузел с горячей водой, отопление и Wi-Fi. "+
+       "Полный список — в описании каждого домика выше."},
+    {q:"Можно приехать с животными?",
+     a:"[Уточнить у владельца — см. CONTENT.md]"},
+    {q:"Есть ли мангал и дрова?",
+     a:"Да, на территории мангальная и костровая зоны. Наличие и стоимость "+
+       "дров — [уточнить у владельца, CONTENT.md]."},
+    {q:"Как работает купель?",
+     a:"Дровяная купель топится заранее к вашему приезду. Длительность "+
+       "сеанса и стоимость — [уточнить, CONTENT.md]."},
+    {q:"Как записаться в баню?",
+     a:"Баня по предварительной записи, мест ограниченно. Запись по "+
+       "телефону — номер появится после заполнения CONTENT.md."},
+    {q:"Можно ли приехать на одну ночь?",
+     a:"[Уточнить минимальный срок брони — CONTENT.md]"},
+    {q:"Как добраться без машины?",
+     a:"[Уточнить у владельца: электричка/такси от станции — CONTENT.md]"},
+    {q:"Что делать, если опаздываем к заезду?",
+     a:"Предупредите заранее по телефону или в мессенджере — подстроимся "+
+       "по возможности."}
+  ];
+  var fl=document.getElementById('faqList');
+  FAQ.forEach(function(f){
+    var item=document.createElement('div');item.className='faq-item';
+    var btn=document.createElement('button');btn.className='faq-q';
+    btn.type='button';btn.setAttribute('aria-expanded','false');
+    btn.textContent=f.q;
+    var ans=document.createElement('div');ans.className='faq-a';
+    var p=document.createElement('p');p.textContent=f.a;ans.appendChild(p);
+    item.appendChild(btn);item.appendChild(ans);fl.appendChild(item);
+  });
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click',function(){
+      var open=q.getAttribute('aria-expanded')==='true';
+      document.querySelectorAll('.faq-q').forEach(function(o){
+        o.setAttribute('aria-expanded','false');
+        o.nextElementSibling.style.maxHeight=null;
+      });
+      if(!open){
+        q.setAttribute('aria-expanded','true');
+        var a=q.nextElementSibling;a.style.maxHeight=a.scrollHeight+'px';
+      }
+    });
+  });
+
+  /* ---- footer year ---- */
+  document.getElementById('year').textContent=new Date().getFullYear();
+
+  /* ---- Yandex.Metrika (spec §8) — guarded by placeholder id ---- */
+  var METRIKA_ID=0; /* ← поставить реальный номер счётчика, см. CONTENT.md */
+  function goal(name){
+    if(METRIKA_ID&&window.ym){try{ym(METRIKA_ID,'reachGoal',name);}catch(e){}}
+  }
+  if(METRIKA_ID){
+    (function(mw,d,t,r,i,k,a){mw[i]=mw[i]||function(){(mw[i].a=mw[i].a||[]).push(arguments)};
+      k=d.createElement(t),a=d.getElementsByTagName(t)[0];k.async=1;k.src=r;
+      a.parentNode.insertBefore(k,a);})
+      (window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+    ym(METRIKA_ID,"init",{webvisor:true,clickmap:true,accurateTrackBounce:true});
+  }
+  function bind(id,name){var el=document.getElementById(id);
+    if(el)el.addEventListener('click',function(){goal(name);});}
+  document.getElementById('bookingWidget')
+    .addEventListener('click',function(){goal('booking_widget_click');});
+  bind('waBtn','whatsapp_click');bind('waBtn2','whatsapp_click');
+  bind('tgBtn','telegram_click');bind('tgBtn2','telegram_click');
+  document.querySelectorAll('.phone').forEach(function(el){
+    el.addEventListener('click',function(){goal('phone_click');});});
+  if('IntersectionObserver' in window){
+    var seen={};
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if(en.isIntersecting&&!seen[en.target.id]){
+          seen[en.target.id]=1;
+          if(en.target.id==='faq')goal('faq_reached');
+          if(en.target.id==='houses')goal('houses_reached');
+        }});},{threshold:.3});
+    io.observe(document.getElementById('faq'));
+    io.observe(document.getElementById('houses'));
+  }
+})();
+</script>
+</body>
+</html>
