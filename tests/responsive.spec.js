@@ -17,9 +17,10 @@ for (const w of WIDTHS) {
     // Relative so it respects a base path (GitHub Pages /<repo>/).
     await page.goto('./');
 
-    // All key sections present.
-    for (const id of ['hero', 'about', 'houses', 'services', 'amenities',
-      'location', 'reviews', 'faq', 'booking', 'contacts']) {
+    // All key sections present (structure after content redesign).
+    for (const id of ['hero', 'about', 'story', 'houses', 'services',
+      'deals', 'amenities', 'around', 'getting', 'reviews', 'faq',
+      'booking', 'contacts']) {
       await expect(page.locator('#' + id)).toHaveCount(1);
     }
 
