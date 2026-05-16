@@ -14,7 +14,8 @@ for (const w of WIDTHS) {
     page.on('pageerror', (e) => errors.push(String(e)));
 
     await page.setViewportSize({ width: w, height: 900 });
-    await page.goto('/');
+    // Relative so it respects a base path (GitHub Pages /<repo>/).
+    await page.goto('./');
 
     // All key sections present.
     for (const id of ['hero', 'about', 'houses', 'services', 'amenities',
